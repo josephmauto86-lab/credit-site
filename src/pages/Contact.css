@@ -97,6 +97,22 @@
   cursor: not-allowed;
 }
 
+.form-feedback {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.form-feedback--success {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.form-feedback--error {
+  color: #dc2626;
+  font-weight: 600;
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;

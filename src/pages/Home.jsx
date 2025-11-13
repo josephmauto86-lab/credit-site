@@ -61,7 +61,7 @@ const Home = () => {
           <div className="hero-content">
             <h1 className="hero-title">Regain Control. Restore Stability. Rebuild Your Future.</h1>
             <p className="hero-subtext">
-              At Creditoré, we help South Africans break free from overwhelming debt through professional, 
+              At Creditore, we help South Africans break free from overwhelming debt through professional, 
               compliant, and compassionate Debt Counselling.
             </p>
             <div className="hero-buttons">
@@ -85,7 +85,7 @@ const Home = () => {
           <div className="about-preview-content">
             <h2 className="section-title">About Creditore</h2>
             <p className="section-subtitle">
-              Creditoré is a registered Debt Counselling practice dedicated to helping clients regain 
+              Creditore is a registered Debt Counselling practice dedicated to helping clients regain 
               financial independence with dignity and support. We understand that debt can be overwhelming, 
               and we're here to guide you through a structured process that protects your rights and 
               helps you achieve financial freedom.

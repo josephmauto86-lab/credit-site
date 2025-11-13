@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
+import logoImg from '../../images/creditore-logo.png'
 import './Header.css'
 
 const Header = () => {
@@ -34,8 +35,8 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content">
-          <Link to="/" className="logo">
-            <h1>Creditoré</h1>
+          <Link to="/" className="logo" aria-label="Creditoré home">
+            <img src={logoImg} alt="Creditoré" />
           </Link>
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>

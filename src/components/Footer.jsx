@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logoImg from '../../images/creditore-logo.png'
 import './Footer.css'
 
 const Footer = () => {
@@ -7,7 +8,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Creditoré</h3>
+            <Link to="/" className="footer-logo-link" aria-label="Creditoré home">
+              <img src={logoImg} alt="Creditoré" className="footer-logo" />
+            </Link>
             <p>Registered Debt Counselling practice helping South Africans regain financial independence with dignity and support.</p>
           </div>
           <div className="footer-section">

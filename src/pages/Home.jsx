@@ -83,7 +83,7 @@ const Home = () => {
       <section className="about-preview section">
         <div className="container">
           <div className="about-preview-content">
-            <h2 className="section-title">About Creditoré</h2>
+            <h2 className="section-title">About Creditore</h2>
             <p className="section-subtitle">
               Creditoré is a registered Debt Counselling practice dedicated to helping clients regain 
               financial independence with dignity and support. We understand that debt can be overwhelming, 

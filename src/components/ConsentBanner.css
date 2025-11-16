@@ -1,0 +1,105 @@
+.consent-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.consent-modal {
+  width: min(680px, 92vw);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: consent-pop 200ms ease;
+}
+
+.consent-header {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(30,58,138,0.08), rgba(30,64,175,0.08));
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.consent-header h3 {
+  margin: 0;
+  color: var(--primary-blue);
+}
+
+.consent-body {
+  padding: 18px 20px;
+  color: var(--text-dark);
+}
+
+.consent-body p {
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.consent-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0 0;
+}
+
+.consent-links a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.consent-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 20px 20px;
+}
+
+.consent-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.consent-btn.secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.consent-btn.primary {
+  background: var(--primary-blue);
+  color: #ffffff;
+}
+
+@keyframes consent-pop {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.sticky-legal {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1100;
+}
+
+.sticky-legal a {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(30, 58, 138, 0.95);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .sticky-legal {
+    left: 12px;
+    bottom: 12px;
+  }
+}
+
+

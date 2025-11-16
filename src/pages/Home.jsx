@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CallbackForm from '../components/CallbackForm'
 import TestimonialCarousel from '../components/TestimonialCarousel'
+import { useInView } from '../hooks/useInView'
 import './Home.css'
 
 const Home = () => {
@@ -52,10 +53,15 @@ const Home = () => {
     }
   ]
 
+  const hero = useInView()
+  const about = useInView()
+  const values = useInView()
+  const trust = useInView()
+
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
+      <section className={`hero reveal ${hero.inView ? 'reveal-in' : ''}`} ref={hero.ref}>
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
@@ -80,7 +86,7 @@ const Home = () => {
       <CallbackForm />
 
       {/* About Us Preview Section */}
-      <section className="about-preview section">
+      <section className={`about-preview section reveal ${about.inView ? 'reveal-in' : ''}`} ref={about.ref}>
         <div className="container">
           <div className="about-preview-content">
             <h2 className="section-title">About Creditore</h2>
@@ -98,7 +104,7 @@ const Home = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="core-values section">
+      <section className={`core-values section reveal ${values.inView ? 'reveal-in' : ''}`} ref={values.ref}>
         <div className="container">
           <h2 className="section-title">Our Core Values</h2>
           <div className="values-grid">
@@ -114,7 +120,7 @@ const Home = () => {
       </section>
 
       {/* Trust & Compliance */}
-      <section className="trust section" aria-labelledby="trust-title">
+      <section className={`trust section reveal ${trust.inView ? 'reveal-in' : ''}`} aria-labelledby="trust-title" ref={trust.ref}>
         <div className="container">
           <h2 id="trust-title" className="section-title">Trust, Compliance & Credibility</h2>
           <p className="section-subtitle">

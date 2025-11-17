@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom'
 import CallbackForm from '../components/CallbackForm'
 import TestimonialCarousel from '../components/TestimonialCarousel'
 import { useInView } from '../hooks/useInView'
+import { 
+  HiShieldCheck, 
+  HiEye, 
+  HiUserGroup, 
+  HiAcademicCap, 
+  HiClipboardCheck 
+} from 'react-icons/hi'
 import './Home.css'
 
 const Home = () => {
@@ -27,27 +34,27 @@ const Home = () => {
 
   const coreValues = [
     {
-      icon: '✓',
+      icon: HiShieldCheck,
       title: 'Integrity',
       description: 'We conduct business with honesty and ethical standards.'
     },
     {
-      icon: '👁️',
+      icon: HiEye,
       title: 'Transparency',
       description: 'Clear communication and no hidden fees or surprises.'
     },
     {
-      icon: '❤️',
+      icon: HiUserGroup,
       title: 'Client-Centric Approach',
       description: 'Your financial well-being is our top priority.'
     },
     {
-      icon: '⭐',
+      icon: HiAcademicCap,
       title: 'Professional Excellence',
       description: 'Registered debt counsellors with proven expertise.'
     },
     {
-      icon: '📋',
+      icon: HiClipboardCheck,
       title: 'Compliance & Ethical Conduct',
       description: 'Fully compliant with NCR regulations and POPIA.'
     }
@@ -108,13 +115,18 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">Our Core Values</h2>
           <div className="values-grid">
-            {coreValues.map((value, index) => (
-              <div key={index} className="value-card">
-                <div className="value-icon">{value.icon}</div>
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
-              </div>
-            ))}
+            {coreValues.map((value, index) => {
+              const IconComponent = value.icon
+              return (
+                <div key={index} className="value-card">
+                  <div className="value-icon">
+                    <IconComponent />
+                  </div>
+                  <h3>{value.title}</h3>
+                  <p>{value.description}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -144,7 +156,6 @@ const Home = () => {
               <p>Custom repayment plans, reduced instalments, and creditor protection.</p>
             </div>
           </div>
-          <p className="trust-note">Provide your official NCR number to replace the placeholder above.</p>
         </div>
       </section>
 

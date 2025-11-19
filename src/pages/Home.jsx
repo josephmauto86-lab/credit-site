@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import CallbackForm from '../components/CallbackForm'
+import { Link, useNavigate } from 'react-router-dom'
+// CallbackForm removed in favor of centralised Contact page form
 import TestimonialCarousel from '../components/TestimonialCarousel'
 import { useInView } from '../hooks/useInView'
 import { 
@@ -12,7 +12,19 @@ import {
 } from 'react-icons/hi'
 import './Home.css'
 
+const Card = ({ icon, title, description }) => {
+  return (
+    <div className="value-card">
+      <div className="value-icon">{icon}</div>
+      <h3 className="value-title">{title}</h3>
+      <p className="value-description">{description}</p>
+    </div>
+  )
+}
+
 const Home = () => {
+  const navigate = useNavigate()
+
   useEffect(() => {
     // Handle hash navigation on mount
     if (window.location.hash === '#callback-form') {
@@ -25,36 +37,33 @@ const Home = () => {
     }
   }, [])
 
-  const scrollToForm = () => {
-    const formElement = document.getElementById('callback-form')
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' })
-    }
+  const handleNavigateToContact = () => {
+    navigate('/contact')
   }
 
   const coreValues = [
     {
-      icon: HiShieldCheck,
+      icon: <HiShieldCheck />,
       title: 'Integrity',
       description: 'We conduct business with honesty and ethical standards.'
     },
     {
-      icon: HiEye,
+      icon: <HiEye />,
       title: 'Transparency',
       description: 'Clear communication and no hidden fees or surprises.'
     },
     {
-      icon: HiUserGroup,
+      icon: <HiUserGroup />,
       title: 'Client-Centric Approach',
       description: 'Your financial well-being is our top priority.'
     },
     {
-      icon: HiAcademicCap,
+      icon: <HiAcademicCap />,
       title: 'Professional Excellence',
       description: 'Registered debt counsellors with proven expertise.'
     },
     {
-      icon: HiClipboardCheck,
+      icon: <HiClipboardCheck />,
       title: 'Compliance & Ethical Conduct',
       description: 'Fully compliant with NCR regulations and POPIA.'
     }
@@ -77,20 +86,34 @@ const Home = () => {
               At Creditore, we help South Africans break free from overwhelming debt through professional, 
               compliant, and compassionate Debt Counselling.
             </p>
+            <ul className="hero-benefits">
+              <li>Fast, confidential assessment — no obligation.</li>
+              <li>Legally compliant solutions tailored to your situation.</li>
+              <li>Experienced, registered debt counsellors guiding every step.</li>
+            </ul>
             <div className="hero-buttons">
-              <button onClick={scrollToForm} className="btn btn-primary">
+              <button onClick={handleNavigateToContact} className="btn btn-primary">
                 Request a Callback
               </button>
-              <Link to="/how-it-works" className="btn btn-secondary">
+              <Link to="/how-it-works" className="btn btn-secondary link-underline">
                 Check If You Qualify
               </Link>
             </div>
           </div>
+          <div className="hero-side-card">
+            <h4>Why choose Creditoré?</h4>
+            <p>We provide structured debt solutions that reduce monthly payments while protecting you legally.</p>
+            <ul>
+              <li>NCR-registered debt counsellors</li>
+              <li>Transparent fees and processes</li>
+              <li>Dedicated client support</li>
+            </ul>
+            <p style={{marginTop: '0.75rem'}}><strong>Contact us today — take the first step.</strong></p>
+          </div>
         </div>
       </section>
 
-      {/* Callback Form Section */}
-      <CallbackForm />
+      {/* Callback form removed — use Contact page instead */}
 
       {/* About Us Preview Section */}
       <section className={`about-preview section reveal ${about.inView ? 'reveal-in' : ''}`} ref={about.ref}>
@@ -103,7 +126,7 @@ const Home = () => {
               and we're here to guide you through a structured process that protects your rights and 
               helps you achieve financial freedom.
             </p>
-            <Link to="/how-it-works" className="btn btn-outline">
+            <Link to="/how-it-works" className="btn btn-outline link-underline">
               Learn More
             </Link>
           </div>
@@ -115,18 +138,9 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">Our Core Values</h2>
           <div className="values-grid">
-            {coreValues.map((value, index) => {
-              const IconComponent = value.icon
-              return (
-                <div key={index} className="value-card">
-                  <div className="value-icon">
-                    <IconComponent />
-                  </div>
-                  <h3>{value.title}</h3>
-                  <p>{value.description}</p>
-                </div>
-              )
-            })}
+            {coreValues.map((value, index) => (
+              <Card key={index} icon={value.icon} title={value.title} description={value.description} />
+            ))}
           </div>
         </div>
       </section>

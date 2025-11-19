@@ -43,17 +43,18 @@ const HowItWorks = () => {
 
   return (
     <div className="how-it-works">
-      <section className="hero-section">
+      <section className="hero-section reveal">
         <div className="container">
           <h1 className="hero-title">Your Journey to Financial Freedom Starts Here</h1>
           <p className="hero-subtitle">
-            We make the Debt Review process simple, safe, and structured.
+            We make the Debt Review process simple, safe, and structured. Our team guides you through every step — from initial assessment to completion — keeping your best interests central.
           </p>
         </div>
       </section>
 
       <section className="steps-section section">
         <div className="container">
+          <p className="section-subtitle prose">The process is designed to protect you while creating an affordable repayment plan. Below is an overview of the steps; every case is treated sensitively and individually.</p>
           <div className="steps-timeline">
             {steps.map((step, index) => (
               <div key={step.number} className="step-item">
@@ -74,7 +75,7 @@ const HowItWorks = () => {
           <div className="cta-content">
             <h2>Ready to Start Your Journey?</h2>
             <p>Take the first step towards financial freedom today.</p>
-            <a href="/" className="btn btn-primary" onClick={(e) => {
+            <a href="/" className="btn btn-primary link-underline" onClick={(e) => {
               e.preventDefault()
               navigate('/')
               setTimeout(() => {

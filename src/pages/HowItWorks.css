@@ -106,16 +106,7 @@
   opacity: 0.95;
 }
 
-.cta-content .btn {
-  background: var(--white);
-  color: var(--primary-blue);
-}
-
-.cta-content .btn:hover {
-  background: var(--light-grey);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+.cta-content .btn { /* uses global button styles */ }
 
 @media (max-width: 768px) {
   .hero-section {

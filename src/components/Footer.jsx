@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <Link to="/" className="footer-logo-link" aria-label="Creditoré home">
-              <img src={logoImg} alt="Creditoré" className="footer-logo" />
+              <img src={logoImg} alt="Creditoré" className="footer-logo" loading="lazy" width={1536} height={1024} />
             </Link>
             <p>Registered Debt Counselling practice helping South Africans regain financial independence with dignity and support.</p>
           </div>

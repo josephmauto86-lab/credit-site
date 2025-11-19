@@ -53,7 +53,7 @@ const FAQ = () => {
 
   return (
     <div className="faq">
-      <section className="hero-section">
+      <section className="hero-section reveal">
         <div className="container">
           <h1 className="hero-title">Frequently Asked Questions</h1>
           <p className="hero-subtitle">
@@ -89,7 +89,7 @@ const FAQ = () => {
           <div className="cta-content">
             <h2>Still have questions?</h2>
             <p>Our team is here to help. Contact us for personalized assistance.</p>
-            <a href="/contact" className="btn btn-primary">
+            <a href="/contact" className="btn btn-primary link-underline">
               Contact Us
             </a>
           </div>

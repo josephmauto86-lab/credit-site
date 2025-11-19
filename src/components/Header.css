@@ -1,6 +1,8 @@
 .header {
   background: var(--white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* soft depth + subtle bottom border for separation */
+  box-shadow: 0 6px 18px rgba(14, 30, 60, 0.06);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -10,45 +12,57 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
+  gap: 2rem;
+  /* Slightly taller header for better presence */
+  padding: 1.25rem 0;
+  min-height: 84px;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.35rem 1.1rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(240, 246, 255, 0.65));
-  box-shadow: 0 10px 28px rgba(23, 60, 185, 0.18);
-  border: 1px solid rgba(36, 99, 255, 0.14);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  transition: transform 0.15s ease;
+  /* keep logo vertically centered inside header */
+  align-self: center;
 }
 
 .logo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(23, 60, 185, 0.22);
+  transform: none;
+  box-shadow: none;
 }
 
 .logo img {
   display: block;
-  height: 58px;
-  max-height: 58px;
-  width: auto;
+  width: 220px;
+  max-width: 240px;
+  height: auto;
   filter: saturate(120%) contrast(105%);
+  object-fit: contain;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav a {
   color: var(--text-dark);
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.18s ease, transform 0.18s ease;
   position: relative;
+  padding: 0.25rem 0.25rem;
+}
+
+.nav a:focus {
+  outline: 3px solid rgba(59,130,246,0.14);
+  outline-offset: 2px;
 }
 
 .nav a:hover {
@@ -58,14 +72,30 @@
 .nav a.btn-primary {
   background: var(--primary-blue);
   color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  padding: 0.55rem 1.05rem;
+  /* pill-shaped for a modern look */
+  border-radius: 999px;
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 18px rgba(36, 99, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav a.btn-primary:hover {
   background: var(--primary-blue-dark);
   color: var(--white);
+  transform: translateY(-1px);
+}
+
+.nav a.btn-primary:active {
+  transform: translateY(0) scale(0.985);
+  box-shadow: 0 4px 12px rgba(36, 99, 255, 0.06);
+}
+
+.nav a.btn-primary:focus {
+  outline: 3px solid rgba(36, 99, 255, 0.15);
+  outline-offset: 3px;
 }
 
 .menu-toggle {
@@ -99,11 +129,12 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-100%);
+    box-shadow: 0 8px 30px rgba(14, 30, 60, 0.08);
+    transform: translateY(-8px);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transform-origin: top center;
+    transition: opacity 0.22s ease, transform 0.22s cubic-bezier(.2,.9,.2,1);
   }
 
   .nav-open {
@@ -112,24 +143,38 @@
     visibility: visible;
   }
 
+  /* small animation for menu open */
+  .nav-open {
+    animation: menuSlideDown 220ms cubic-bezier(.2,.9,.2,1) both;
+  }
+
+  @keyframes menuSlideDown {
+    from { transform: translateY(-8px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
   .nav a {
     width: 100%;
-    padding: 0.75rem 0;
+    padding: 0.65rem 0;
+    box-sizing: border-box;
   }
 
   .nav a.btn-primary {
     width: 100%;
     text-align: center;
+    padding: 0.9rem 0;
+    border-radius: 8px;
   }
 
   .logo {
-    padding: 0.25rem 0.8rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(242, 248, 255, 0.72));
-    box-shadow: 0 8px 22px rgba(23, 60, 185, 0.16);
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .logo img {
-    height: 46px;
-    max-height: 46px;
+    width: 180px;
+    max-width: 200px;
+    height: auto;
   }
 }

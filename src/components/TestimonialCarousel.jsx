@@ -55,7 +55,7 @@ const TestimonialCarousel = () => {
   }
 
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section reveal">
       <div className="container">
         <h2 className="section-title">Real Stories. Real Relief. Real Results.</h2>
         <div className="testimonial-carousel">

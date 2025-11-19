@@ -19,6 +19,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload critical logo to improve Largest Contentful Paint -->
+    <link rel="preload" as="image" href="/images/creditore-logo-400.webp" type="image/webp">
+    <!-- Preconnect to Formspree for faster form submissions -->
+    <link rel="preconnect" href="https://formspree.io">
+    <!-- JSON-LD Organization structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Creditoré",
+      "url": "https://creditore.co.za",
+      "logo": "https://creditore.co.za/images/creditore-logo-400.webp",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+27-21-569-6571",
+        "contactType": "customer service",
+        "areaServed": "ZA"
+      }],
+      "sameAs": ["https://facebook.com","https://instagram.com"]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

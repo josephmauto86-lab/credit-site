@@ -1,0 +1,1 @@
+/* Moved from src/components/TestimonialCarousel.jsx */

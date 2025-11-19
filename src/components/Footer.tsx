@@ -1,62 +1,68 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import {
   Instagram,
+  Twitter,
   Linkedin,
   Phone,
   Mail,
   MapPin,
 } from "lucide-react";
-import logoPng200 from "../../images/creditore-logo-200.png";
-import logoPng400 from "../../images/creditore-logo-400.png";
-import logoPng800 from "../../images/creditore-logo-800.png";
-import logoPng1536 from "../../images/creditore-logo-1536.png";
-import logoWebp200 from "../../images/creditore-logo-200.webp";
-import logoWebp400 from "../../images/creditore-logo-400.webp";
-import logoWebp800 from "../../images/creditore-logo-800.webp";
-import logoWebp1536 from "../../images/creditore-logo-1536.webp";
-import "./Footer.css";
 
-const Footer = () => {
-  const socialLinks = [
-    {
-      icon: Instagram,
-      href: "https://instagram.com/creditore",
-      label: "Instagram",
-    },
-    {
-      icon: Linkedin,
-      href: "https://linkedin.com/company/creditore",
-      label: "LinkedIn",
-    },
-  ];
+interface FooterLink {
+  label: string;
+  href: string;
+  badge?: string;
+}
 
-  const columns = [
+interface FooterColumn {
+  title: string;
+  links: FooterLink[];
+}
+
+interface SocialLink {
+  icon: React.ComponentType<{ className?: string }>;
+  href: string;
+  label: string;
+}
+
+interface FooterProps {
+  logoSrc?: string;
+  logoAlt?: string;
+  description?: string;
+  columns?: FooterColumn[];
+  socialLinks?: SocialLink[];
+  copyright?: string;
+}
+
+export const Footer: FC<FooterProps> = ({
+  description = "Professional debt counselling and financial guidance to help you regain control and rebuild your future.",
+  columns = [
     {
       title: "SERVICES",
       links: [
         { label: "Debt Review", href: "/how-it-works" },
         { label: "Financial Assessment", href: "/contact" },
-        { label: "How It Works", href: "/how-it-works" },
-        { label: "FAQ", href: "/faq" },
+        { label: "Debt Consolidation", href: "/how-it-works" },
+        { label: "Credit Rehabilitation", href: "/how-it-works" },
       ],
     },
     {
       title: "RESOURCES",
       links: [
-        { label: "Help Center", href: "/faq" },
-        { label: "Contact Us", href: "/contact" },
+        { label: "FAQ", href: "/faq" },
+        { label: "How It Works", href: "/how-it-works" },
         { label: "Blog", href: "https://creditore.co.za" },
-        { label: "NCR Registration", href: "https://creditore.co.za" },
+        { label: "Contact Support", href: "/contact" },
       ],
     },
     {
       title: "COMPANY",
       links: [
-        { label: "About Us", href: "https://creditore.co.za" },
+        { label: "About Creditoré", href: "https://creditore.co.za" },
+        { label: "NCR Registration", href: "https://creditore.co.za" },
         { label: "Our Team", href: "https://creditore.co.za" },
         { label: "Careers", href: "https://creditore.co.za" },
-        { label: "Press", href: "https://creditore.co.za" },
       ],
     },
     {
@@ -68,8 +74,22 @@ const Footer = () => {
         { label: "Security", href: "/privacy" },
       ],
     },
-  ];
-
+  ],
+  socialLinks = [
+    {
+      icon: Instagram,
+      href: "https://instagram.com/creditore",
+      label: "Instagram",
+    },
+    { icon: Twitter, href: "https://twitter.com/creditore", label: "Twitter" },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/company/creditore",
+      label: "LinkedIn",
+    },
+  ],
+  copyright = `© ${new Date().getFullYear()} Creditoré. All Rights Reserved. NCR Registered Debt Counsellor.`,
+}) => {
   return (
     <footer className="w-full bg-gradient-to-b from-white via-[#f3f4f6] to-[#f9fafb] border-t-2 border-[#0080ff]">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -81,12 +101,12 @@ const Footer = () => {
               <picture>
                 <source
                   type="image/webp"
-                  srcSet={`${logoWebp200} 200w, ${logoWebp400} 400w, ${logoWebp800} 800w, ${logoWebp1536} 1536w`}
+                  srcSet="/images/creditore-logo-200.webp 200w, /images/creditore-logo-400.webp 400w, /images/creditore-logo-800.webp 800w, /images/creditore-logo-1536.webp 1536w"
                   sizes="(max-width: 768px) 160px, 200px"
                 />
                 <img
-                  src={logoPng1536}
-                  srcSet={`${logoPng200} 200w, ${logoPng400} 400w, ${logoPng800} 800w, ${logoPng1536} 1536w`}
+                  src="/images/creditore-logo-1536.png"
+                  srcSet="/images/creditore-logo-200.png 200w, /images/creditore-logo-400.png 400w, /images/creditore-logo-800.png 800w, /images/creditore-logo-1536.png 1536w"
                   sizes="(max-width: 768px) 160px, 200px"
                   alt="Creditoré"
                   width={200}
@@ -96,7 +116,7 @@ const Footer = () => {
               </picture>
             </Link>
             <p className="text-[#6b7280] text-sm leading-relaxed font-medium">
-              Professional debt counselling helping South Africans regain financial independence with dignity and support.
+              {description}
             </p>
             <div className="flex gap-4 mt-2">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -122,7 +142,7 @@ const Footer = () => {
                   {col.title}
                 </h4>
                 <ul className="space-y-2">
-                  {col.links.map(({ label, href }) => (
+                  {col.links.map(({ label, href, badge }) => (
                     <li key={label}>
                       <Link
                         to={href}
@@ -130,6 +150,11 @@ const Footer = () => {
                       >
                         <span className="w-1 h-1 bg-[#0080ff] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                         {label}
+                        {badge && (
+                          <span className="bg-[#0080ff] text-[#ffffff] text-xs px-2 py-0.5 rounded-full font-semibold">
+                            {badge}
+                          </span>
+                        )}
                       </Link>
                     </li>
                   ))}
@@ -184,7 +209,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-[#e5e7eb] pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#6b7280]">
-          <p>© {new Date().getFullYear()} Creditoré. All Rights Reserved. NCR Registered Debt Counsellor.</p>
+          <p>{copyright}</p>
           <div className="flex gap-6">
             <Link
               to="/privacy"

@@ -1,6 +1,11 @@
+/*
+  The following Tailwind directives require Tailwind CSS and PostCSS setup.
+  If you see "Unknown at rule @tailwind", ensure your build tool is configured for Tailwind.
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 * {
   margin: 0;
@@ -9,17 +14,19 @@
 }
 
 :root {
-  --primary-blue: #1e3a8a;
-  --primary-blue-light: #3b82f6;
-  --primary-blue-dark: #1e40af;
-  --secondary-grey: #64748b;
-  --light-grey: #f1f5f9;
-  --dark-grey: #334155;
+  --primary-blue: #0066cc; /* Vibrant blue */
+  --primary-blue-light: #0080ff; /* Lighter blue */
+  --primary-blue-dark: #003d99; /* Darker blue */
+  --secondary-grey: #6b7280; /* Grey */
+  --light-grey: #f3f4f6; /* Light grey */
+  --dark-grey: #1f2937; /* Dark grey */
   --white: #ffffff;
-  --accent: #0ea5e9;
+  --accent: #0080ff; /* Blue accent */
   --success: #10b981;
-  --text-dark: #1e293b;
-  --text-light: #64748b;
+  --text-dark: #1f2937; /* Dark text */
+  --text-light: #6b7280; /* Light text */
+  --premium-gradient: linear-gradient(90deg, #0066cc 0%, #0080ff 100%);
+  --premium-shadow: 0 8px 32px 0 rgba(0,102,204,0.10);
 }
 
 body {
@@ -31,6 +38,7 @@ body {
   color: var(--text-dark);
   line-height: 1.7;
   font-size: 16px;
+  background: linear-gradient(180deg, #f6f7fa 0%, #e9eaf0 100%);
 }
 
 html {
@@ -45,6 +53,10 @@ code {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.18s cubic-bezier(0.4,0,0.2,1);
+}
+a:hover {
+  color: #0080ff;
 }
 
 button {
@@ -67,12 +79,13 @@ input, textarea, select {
 
 .section {
   padding: 72px 0;
+  transition: background 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transition: opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .reveal.reveal-in {
@@ -81,21 +94,26 @@ input, textarea, select {
 }
 
 .section-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 1rem;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--primary-blue-light);
+  text-shadow: 0 2px 16px rgba(0,128,255,0.08);
+  margin-bottom: 1.5rem;
   text-align: center;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--text-light);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 500;
+  line-height: 1.8;
 }
 
 /* Readable content helper similar to prose utilities */
@@ -104,33 +122,48 @@ input, textarea, select {
   margin-left: auto;
   margin-right: auto;
   color: var(--text-dark);
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  font-family: 'Inter', 'Georgia', serif;
 }
 
 /* Headings consistent scale */
-h1, .h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.5rem; line-height: 1.12; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
-h2, .h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.9rem; line-height: 1.18; margin-bottom: 0.6rem; }
-h3, .h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; line-height: 1.25; margin-bottom: 0.5rem; }
+h1, .h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 3.25rem; line-height: 1.08; margin-bottom: 1.1rem; letter-spacing: -0.03em; font-weight: 800; }
+h2, .h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2.25rem; line-height: 1.15; margin-bottom: 0.8rem; font-weight: 700; }
+h3, .h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; line-height: 1.22; margin-bottom: 0.6rem; font-weight: 700; }
 
 /* Modern button system (global) */
 .btn {
-  padding: 0.85rem 1.6rem;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 1rem 2.1rem;
+  font-size: 1.08rem;
+  font-weight: 700;
   border-radius: 999px;
-  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  transition: transform 160ms cubic-bezier(0.4,0,0.2,1), box-shadow 160ms cubic-bezier(0.4,0,0.2,1), opacity 160ms cubic-bezier(0.4,0,0.2,1);
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
+  letter-spacing: 0.01em;
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-light));
+  background: var(--premium-gradient);
   color: #fff;
-  box-shadow: 0 8px 30px rgba(14,30,60,0.12);
+  box-shadow: var(--premium-shadow);
+  border: 1.5px solid #0080ff;
+  outline: none;
+  transition: box-shadow 0.22s cubic-bezier(0.4,0,0.2,1), border-color 0.22s cubic-bezier(0.4,0,0.2,1), background 0.22s cubic-bezier(0.4,0,0.2,1);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(14,30,60,0.14); }
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 48px rgba(0,128,255,0.18), 0 2px 8px 0 rgba(0,102,204,0.08);
+  border-color: #0099ff;
+  background: linear-gradient(90deg, #0080ff 0%, #0066cc 100%);
+}
+.btn-primary:focus {
+  outline: 3px solid #0080ff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0,128,255,0.18);
+}
 
 .btn-secondary {
   background: transparent;
@@ -141,10 +174,38 @@ h3, .h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; l
 
 .btn-outline {
   background: transparent;
-  color: var(--primary-blue);
-  border: 1px solid rgba(30,58,138,0.12);
+  color: var(--primary-blue-light);
+  border: 1.5px solid #0080ff;
+  outline: none;
+  transition: box-shadow 0.22s cubic-bezier(0.4,0,0.2,1), border-color 0.22s cubic-bezier(0.4,0,0.2,1), background 0.22s cubic-bezier(0.4,0,0.2,1);
 }
-.btn-outline:hover { background: rgba(30,58,138,0.06); color: var(--primary-blue); }
+.btn-outline:hover {
+  background: rgba(0,128,255,0.13);
+  color: var(--primary-blue-dark);
+  border-color: #0099ff;
+}
+.btn-outline:focus {
+  outline: 3px solid #0080ff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0,128,255,0.18);
+}
+
+/* Premium Animations and Micro-interactions */
+.value-card, .trust-card {
+  transition: 
+    box-shadow 0.35s cubic-bezier(0.4,0,0.2,1),
+    border-color 0.35s cubic-bezier(0.4,0,0.2,1),
+    background 0.35s cubic-bezier(0.4,0,0.2,1),
+    transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform, box-shadow;
+}
+
+.value-card:hover, .trust-card:hover {
+  transform: translateY(-10px) scale(1.025);
+  box-shadow: 0 24px 64px rgba(0,128,255,0.16), 0 4px 16px 0 rgba(0,102,204,0.08);
+  border-color: #0099ff;
+  background: linear-gradient(135deg, #e0eeff 0%, #f3f4f6 100%);
+}
 
 /* Slightly stronger focus outlines for keyboard users */
 button:focus, a:focus, input:focus, textarea:focus {
@@ -164,7 +225,7 @@ button:focus, a:focus, input:focus, textarea:focus {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background: var(--primary-blue);
+  background: var(--primary-blue-light);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 220ms ease;
@@ -172,6 +233,15 @@ button:focus, a:focus, input:focus, textarea:focus {
 .link-underline:hover::after,
 .link-underline:focus::after {
   transform: scaleX(1);
+}
+.link-underline::after {
+  background: linear-gradient(90deg, #0066cc 0%, #0080ff 100%);
+  height: 2.5px;
+  border-radius: 2px;
+  opacity: 0.85;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms cubic-bezier(0.4,0,0.2,1);
 }
 
 /* Fade-up reveal animation */
@@ -199,8 +269,8 @@ button:focus, a:focus, input:focus, textarea:focus {
   width: auto;
   height: auto;
   padding: 0.5rem 0.75rem;
-  background: var(--primary-blue);
-  color: var(--white);
+  background: var(--primary-blue-light);
+  color: var(--primary-blue-dark);
   border-radius: 6px;
   box-shadow: 0 6px 18px rgba(14,30,60,0.12);
   text-decoration: none;

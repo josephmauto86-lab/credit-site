@@ -41,7 +41,7 @@
   right: 0;
   bottom: 0;
   /* lighten overlay so hero feels less dark */
-  background: linear-gradient(180deg, rgba(11,37,69,0.50), rgba(11,37,69,0.30));
+  background: linear-gradient(180deg, rgba(11,37,69,0.40), rgba(11,37,69,0.20));
   z-index: 1;
 }
 

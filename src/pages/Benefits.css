@@ -1,0 +1,44 @@
+.benefits-hero {
+  padding: calc(var(--header-height) + 12px) 0 2.5rem 0;
+  background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+  text-align: center;
+}
+.benefits-hero .hero-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.benefits-hero .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem }
+.benefits-hero .hero-copy { flex: 1; text-align: left }
+.benefits-hero .hero-art { flex: 0 0 420px; display: flex; align-items: center; justify-content: center }
+.benefits-hero .hero-art svg { max-width: 100%; height: auto; border-radius: 12px }
+.benefits-hero .hero-subtitle {
+  color: #334155;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+}
+.hero-cta { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1rem }
+
+.benefits-list { padding: 3rem 0 }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; margin-top: 1.25rem }
+.benefit-card { background: #fff; border: 1px solid #e6e9ee; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 2px rgba(16,24,40,0.03) }
+.benefit-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 999px; margin-bottom: 0.5rem }
+.benefit-card svg { display: block }
+
+.benefit-card h3 { margin-top: 0.25rem }
+
+.faq-section { padding: 2.5rem 0 }
+.faq-item { margin-bottom: 0.5rem; border: 1px solid #e6e9ee; border-radius: 6px; padding: 0.5rem }
+.faq-item summary { cursor: pointer; font-weight: 600 }
+.faq-answer { padding-top: 0.5rem }
+
+.final-cta { padding: 2.5rem 0; text-align: center }
+.final-cta .cta-inner { max-width: 720px; margin: 0 auto }
+
+@media (max-width: 640px) {
+  .benefits-hero { padding-top: calc(var(--header-height) + 8px) }
+  .benefits-hero .hero-title { font-size: 1.5rem }
+  .hero-cta { flex-direction: column }
+  .benefits-hero .hero-inner { flex-direction: column-reverse; text-align: center }
+  .benefits-hero .hero-copy { text-align: center }
+  .benefits-hero .hero-art { width: 100%; max-width: 360px }
+}

@@ -87,6 +87,7 @@ const Header = () => {
           <nav ref={navRef} id="site-nav" role="navigation" aria-label="Main navigation" className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <Link to="/" onClick={() => setIsMenuOpen(false)} className="link-underline">Home</Link>
             <Link to="/how-it-works" onClick={() => setIsMenuOpen(false)} className="link-underline">How It Works</Link>
+            <Link to="/benefits" onClick={() => setIsMenuOpen(false)} className="link-underline">Benefits</Link>
             <Link to="/faq" onClick={() => setIsMenuOpen(false)} className="link-underline">FAQ</Link>
             <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="link-underline">Contact</Link>
             <Link to="/contact" className="btn-primary" onClick={() => setIsMenuOpen(false)}>

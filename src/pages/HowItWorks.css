@@ -3,9 +3,9 @@
 }
 
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-2) 100%);
   color: var(--white);
-  padding: 100px 0;
+  padding: calc(var(--header-height) + 16px) 0 40px 0;
   text-align: center;
 }
 
@@ -110,7 +110,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 60px 0;
+    padding: calc(var(--header-height) + 8px) 0 32px 0;
   }
 
   .hero-title {

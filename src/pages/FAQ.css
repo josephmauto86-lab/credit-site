@@ -5,7 +5,7 @@
 .hero-section {
   background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
   color: var(--white);
-  padding: 100px 0;
+  padding: 48px 0 24px 0;
   text-align: center;
 }
 
@@ -24,6 +24,8 @@
 
 .faq-section {
   background: var(--white);
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .faq-list {

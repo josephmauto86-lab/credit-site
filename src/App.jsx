@@ -5,6 +5,7 @@ import StickyActions from './components/StickyActions'
 import ConsentBanner from './components/ConsentBanner'
 import Home from './pages/Home'
 import HowItWorks from './pages/HowItWorks'
+import Benefits from './pages/Benefits'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/benefits" element={<Benefits />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />

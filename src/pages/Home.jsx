@@ -101,7 +101,14 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <div className="hero-side-card">
+          {/* hero-side-card moved below the hero to improve separation and layout */}
+        </div>
+      </section>
+
+      {/* Floating card: separated from hero for improved visual hierarchy */}
+      <div className="hero-side-card-wrapper">
+        <div className="container">
+          <div className="hero-side-card-floating">
             <h4>Why choose Creditoré?</h4>
             <p>We provide structured debt solutions that reduce monthly payments while protecting you legally.</p>
             <ul>
@@ -109,10 +116,10 @@ const Home = () => {
               <li>Transparent fees and processes</li>
               <li>Dedicated client support</li>
             </ul>
-            <p style={{marginTop: '0.75rem'}}><strong>Contact us today — take the first step.</strong></p>
+            <p style={{marginTop: '0.5rem'}}><strong>Contact us today — take the first step.</strong></p>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Callback form removed — use Contact page instead */}
 

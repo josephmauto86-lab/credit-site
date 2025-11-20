@@ -11,6 +11,7 @@ import {
   HiClipboardCheck 
 } from 'react-icons/hi'
 import './Home.css'
+import ResponsiveImage from '../components/ResponsiveImage'
 
 const Card = ({ icon, title, description }) => {
   return (
@@ -134,11 +135,10 @@ const Home = () => {
             </div>
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/images/financial-planning.jpg" 
-                alt="Financial planning session with calculator and documents" 
+              <ResponsiveImage
+                src="/images/financial-planning.jpg"
+                alt="Financial planning session with calculator and documents"
                 className="w-full h-auto object-cover"
-                loading="lazy"
               />
             </div>
           </div>
@@ -163,11 +163,10 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
-              <img 
-                src="/images/consultation-meeting.jpg" 
-                alt="Professional debt counsellor consulting with clients" 
+              <ResponsiveImage
+                src="/images/consultation-meeting.jpg"
+                alt="Professional debt counsellor consulting with clients"
                 className="w-full h-auto object-cover"
-                loading="lazy"
               />
             </div>
             {/* Text Content */}
@@ -222,11 +221,10 @@ const Home = () => {
             </div>
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/images/professional-finance.jpg" 
-                alt="Financial professional discussing debt solutions" 
+              <ResponsiveImage
+                src="/images/professional-finance.jpg"
+                alt="Financial professional discussing debt solutions"
                 className="w-full h-auto object-cover"
-                loading="lazy"
               />
             </div>
           </div>

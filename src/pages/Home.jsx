@@ -143,7 +143,7 @@ const Home = () => {
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg">
               <ResponsiveImage
-                src="/images/financial-planning.jpg"
+                src="/images/Pic1.jpeg"
                 alt="Financial planning session with calculator and documents"
                 className="w-full h-auto object-cover"
               />
@@ -171,7 +171,7 @@ const Home = () => {
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
               <ResponsiveImage
-                src="/images/consultation-meeting.jpg"
+                src="/images/Pic2.jpeg"
                 alt="Professional debt counsellor consulting with clients"
                 className="w-full h-auto object-cover"
               />
@@ -229,7 +229,7 @@ const Home = () => {
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg">
               <ResponsiveImage
-                src="/images/professional-finance.jpg"
+                src="/images/Pic3.jpeg"
                 alt="Financial professional discussing debt solutions"
                 className="w-full h-auto object-cover"
               />

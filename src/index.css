@@ -27,8 +27,9 @@
   --premium-gradient: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-primary-2) 100%);
   --premium-shadow: 0 10px 40px rgba(11,37,69,0.08);
   /* Typography vars */
-  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  --font-serif: 'Merriweather', Georgia, 'Times New Roman', serif;
+  /* Premium font stack (headings: serif, UI: clean sans) */
+  --font-sans: 'Poppins', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-serif: 'Merriweather', 'Playfair Display', Georgia, 'Times New Roman', serif;
   --header-height: 84px;
 }
 /* Backwards-compatible aliases for older styles */
@@ -44,9 +45,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-dark);
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.72;
+  font-size: 16.25px; /* slightly larger for better readability */
   background: linear-gradient(180deg, #f6f7fa 0%, #e9eaf0 100%);
+  font-variant-ligatures: common-ligatures;
 }
 
 html {
@@ -136,9 +138,9 @@ input, textarea, select {
 }
 
 /* Headings consistent scale */
-h1, .h1 { font-family: var(--font-serif); font-size: 3rem; line-height: 1.06; margin-bottom: 1rem; letter-spacing: -0.02em; font-weight: 800; }
-h2, .h2 { font-family: var(--font-serif); font-size: 2.1rem; line-height: 1.12; margin-bottom: 0.8rem; font-weight: 700; }
-h3, .h3 { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.22; margin-bottom: 0.6rem; font-weight: 700; }
+h1, .h1 { font-family: var(--font-serif); font-size: 3.4rem; line-height: 1.04; margin-bottom: 1rem; letter-spacing: -0.02em; font-weight: 900; }
+h2, .h2 { font-family: var(--font-serif); font-size: 2.4rem; line-height: 1.08; margin-bottom: 0.8rem; font-weight: 800; }
+h3, .h3 { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.18; margin-bottom: 0.6rem; font-weight: 700; }
 
 /* Modern button system (global) */
 .btn {

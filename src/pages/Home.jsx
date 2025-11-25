@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 // CallbackForm removed in favour of centralised Contact page form
 import TestimonialsCarouselPremium from '../components/TestimonialsCarouselPremium'
 import { useInView } from '../hooks/useInView'
-import { 
-  HiShieldCheck, 
-  HiEye, 
-  HiUserGroup, 
-  HiAcademicCap, 
-  HiClipboardCheck 
+import {
+  HiShieldCheck,
+  HiEye,
+  HiUserGroup,
+  HiAcademicCap,
+  HiClipboardCheck
 } from 'react-icons/hi'
 import './Home.css'
 import ResponsiveImage from '../components/ResponsiveImage'
@@ -78,30 +78,30 @@ const Home = () => {
   return (
     <div className="home">
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className={`hero reveal ${hero.inView ? 'reveal-in' : ''}`} ref={hero.ref}>
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">Regain Control. Restore Stability. Rebuild Your Future.</h1>
+            <h1 className="hero-title">Find Your Path to Financial Freedom.</h1>
             <p className="hero-subtext">
-              At Creditore, we help South Africans break free from overwhelming debt through professional, 
-              compliant, and compassionate Debt Counselling.
+              Let our expert team guide you through personalized credit and debt solutions.
+              Schedule your free consultation today.
             </p>
             <ul className="hero-benefits">
-              <li>Fast, confidential assessment — no obligation.</li>
-              <li>Legally compliant solutions tailored to your situation.</li>
-              <li>Experienced, registered debt counsellors guiding every step.</li>
+              <li><span className="text-brand-accent mr-2">✓</span> Fast, confidential assessment</li>
+              <li><span className="text-brand-accent mr-2">✓</span> Legally compliant solutions</li>
+              <li><span className="text-brand-accent mr-2">✓</span> Experienced debt counsellors</li>
             </ul>
             <div className="hero-buttons">
               <button onClick={handleNavigateToContact} className="btn btn-primary">
-                Request a Callback
+                Schedule Free Consultation
               </button>
               <Link to="/how-it-works" className="btn btn-secondary link-underline">
                 Check If You Qualify
               </Link>
             </div>
           </div>
-          {/* hero-side-card moved below the hero to improve separation and layout */}
         </div>
       </section>
 
@@ -116,7 +116,7 @@ const Home = () => {
               <li>Transparent fees and processes</li>
               <li>Dedicated client support</li>
             </ul>
-            <p style={{marginTop: '0.5rem'}}><strong>Contact us today — take the first step.</strong></p>
+            <p style={{ marginTop: '0.5rem' }}><strong>Contact us today — take the first step.</strong></p>
           </div>
         </div>
       </div>
@@ -131,9 +131,9 @@ const Home = () => {
             <div>
               <h2 className="section-title">About Creditore</h2>
               <p className="section-subtitle mb-6">
-                Creditore is a registered Debt Counselling practice dedicated to helping clients regain 
-                financial independence with dignity and support. We understand that debt can be overwhelming, 
-                and we're here to guide you through a structured process that protects your rights and 
+                Creditore is a registered Debt Counselling practice dedicated to helping clients regain
+                financial independence with dignity and support. We understand that debt can be overwhelming,
+                and we're here to guide you through a structured process that protects your rights and
                 helps you achieve financial freedom.
               </p>
               <Link to="/how-it-works" className="btn btn-outline link-underline">
@@ -143,7 +143,7 @@ const Home = () => {
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg">
               <ResponsiveImage
-                src="/images/Pic1.jpeg"
+                src="/images/Pic5.jpg"
                 alt="Financial planning session with calculator and documents"
                 className="w-full h-auto object-cover"
               />
@@ -165,37 +165,37 @@ const Home = () => {
       </section>
 
       {/* Professional Consultation Section */}
-      <section className="section bg-gradient-to-b from-white to-blue-50">
+      <section className="section bg-gradient-to-b from-white to-brand-light">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             {/* Image */}
             <div className="rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
               <ResponsiveImage
-                src="/images/Pic2.jpeg"
+                src="/images/Pic5.jpg"
                 alt="Professional debt counsellor consulting with clients"
                 className="w-full h-auto object-cover"
               />
             </div>
             {/* Text Content */}
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold text-[#0066cc] mb-4">Expert Guidance You Can Trust</h2>
-              <p className="text-[#6b7280] mb-4 text-lg leading-relaxed font-medium">
-                Our team of registered debt counsellors brings years of experience in helping South Africans 
-                navigate complex financial situations. We don't just provide solutions — we provide support, 
+              <h2 className="text-3xl font-bold text-brand-primary mb-4">Expert Guidance You Can Trust</h2>
+              <p className="text-brand-muted mb-4 text-lg leading-relaxed font-medium">
+                Our team of registered debt counsellors brings years of experience in helping South Africans
+                navigate complex financial situations. We don't just provide solutions — we provide support,
                 clarity, and a clear path forward.
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#0080ff] font-bold mt-1">✓</span>
-                  <span className="text-[#6b7280]"><strong>Personalized Assessment:</strong> We evaluate your unique financial situation to create a tailored debt plan.</span>
+                  <span className="text-brand-accent font-bold mt-1">✓</span>
+                  <span className="text-brand-muted"><strong>Personalized Assessment:</strong> We evaluate your unique financial situation to create a tailored debt plan.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#0080ff] font-bold mt-1">✓</span>
-                  <span className="text-[#6b7280]"><strong>Legal Protection:</strong> Our counsellors ensure your rights are protected throughout the process.</span>
+                  <span className="text-brand-accent font-bold mt-1">✓</span>
+                  <span className="text-brand-muted"><strong>Legal Protection:</strong> Our counsellors ensure your rights are protected throughout the process.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#0080ff] font-bold mt-1">✓</span>
-                  <span className="text-[#6b7280]"><strong>Ongoing Support:</strong> We're with you every step of the way, from assessment to debt freedom.</span>
+                  <span className="text-brand-accent font-bold mt-1">✓</span>
+                  <span className="text-brand-muted"><strong>Ongoing Support:</strong> We're with you every step of the way, from assessment to debt freedom.</span>
                 </li>
               </ul>
               <button onClick={handleNavigateToContact} className="btn btn-primary">
@@ -212,14 +212,14 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-12">
             {/* Text Content */}
             <div>
-              <h2 id="trust-title" className="text-3xl font-bold text-[#0066cc] mb-4">The Path to Financial Freedom</h2>
-              <p className="text-[#6b7280] mb-4 text-lg leading-relaxed font-medium">
-                Debt doesn't define you. With the right guidance and a structured plan, you can break free from 
-                financial stress and build a secure future. Our debt counselling process is designed to be transparent, 
+              <h2 id="trust-title" className="text-3xl font-bold text-brand-primary mb-4">The Path to Financial Freedom</h2>
+              <p className="text-brand-muted mb-4 text-lg leading-relaxed font-medium">
+                Debt doesn't define you. With the right guidance and a structured plan, you can break free from
+                financial stress and build a secure future. Our debt counselling process is designed to be transparent,
                 legally compliant, and results-focused.
               </p>
-              <p className="text-[#6b7280] mb-6 text-lg leading-relaxed font-medium">
-                Whether you're struggling with credit card debt, personal loans, or multiple creditors, 
+              <p className="text-brand-muted mb-6 text-lg leading-relaxed font-medium">
+                Whether you're struggling with credit card debt, personal loans, or multiple creditors,
                 we have solutions that work. Let us help you reclaim your financial independence.
               </p>
               <Link to="/how-it-works" className="btn btn-primary link-underline">
@@ -236,7 +236,7 @@ const Home = () => {
             </div>
           </div>
 
-          <h3 className="text-2xl font-bold text-center text-[#0066cc] mb-8">Why South Africans Choose Creditore</h3>
+          <h3 className="text-2xl font-bold text-center text-brand-primary mb-8">Why South Africans Choose Creditore</h3>
           <div className="trust-grid">
             <div className="trust-card">
               <h4>NCR Registration</h4>

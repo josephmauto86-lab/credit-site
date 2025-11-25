@@ -1,8 +1,28 @@
+import { useState, useEffect } from 'react'
 import './StickyActions.css'
 
 const StickyActions = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+    }
+
+    window.addEventListener('scroll', toggleVisibility)
+
+    return () => window.removeEventListener('scroll', toggleVisibility)
+  }, [])
+
   return (
-    <div className="sticky-actions" aria-label="Quick contact actions">
+    <div
+      className={`sticky-actions ${isVisible ? 'visible' : ''}`}
+      aria-label="Quick contact actions"
+    >
       <a
         className="sticky-btn sticky-whatsapp"
         href="https://wa.me/27215696571"

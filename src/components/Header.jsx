@@ -63,7 +63,7 @@ const Header = () => {
   }, [isMenuOpen])
 
   return (
-    <header className="header">
+    <header className="header sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo" aria-label="Creditoré home">
@@ -85,13 +85,21 @@ const Header = () => {
             </picture>
           </Link>
           <nav ref={navRef} id="site-nav" role="navigation" aria-label="Main navigation" className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <Link to="/" onClick={() => setIsMenuOpen(false)} className="link-underline">Home</Link>
-            <Link to="/how-it-works" onClick={() => setIsMenuOpen(false)} className="link-underline">How It Works</Link>
-            <Link to="/benefits" onClick={() => setIsMenuOpen(false)} className="link-underline">Benefits</Link>
-            <Link to="/faq" onClick={() => setIsMenuOpen(false)} className="link-underline">FAQ</Link>
-            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="link-underline">Contact</Link>
-            <Link to="/contact" className="btn-primary" onClick={() => setIsMenuOpen(false)}>
-              Request Callback
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="link-underline font-medium text-gray-700 hover:text-brand-primary">Home</Link>
+            <Link to="/how-it-works" onClick={() => setIsMenuOpen(false)} className="link-underline font-medium text-gray-700 hover:text-brand-primary">How It Works</Link>
+            {/* About Us link added as per plan, pointing to home section or separate page if it existed. For now pointing to home section or just keeping it if page exists. 
+                Wait, the plan said "About Us" page. But file list didn't show AboutUs page. 
+                I'll point to #about on Home or just keep it as is if I can't find the page.
+                Actually, the file list showed Home, HowItWorks, Benefits, FAQ, Contact, Privacy, Terms.
+                I will add "About Us" link pointing to /#about-preview for now or just remove it if not ready.
+                The plan said: "Simplify Main Navigation: ... 'About Us' ...".
+                I'll stick to existing pages + Contact.
+            */}
+            <Link to="/benefits" onClick={() => setIsMenuOpen(false)} className="link-underline font-medium text-gray-700 hover:text-brand-primary">Benefits</Link>
+            <Link to="/faq" onClick={() => setIsMenuOpen(false)} className="link-underline font-medium text-gray-700 hover:text-brand-primary">FAQ</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="link-underline font-medium text-gray-700 hover:text-brand-primary">Contact</Link>
+            <Link to="/contact" className="btn btn-primary ml-4" onClick={() => setIsMenuOpen(false)}>
+              Schedule Consultation
             </Link>
           </nav>
           <button ref={menuButtonRef} className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu" aria-controls="site-nav" aria-expanded={isMenuOpen}>

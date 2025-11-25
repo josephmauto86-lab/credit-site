@@ -6,6 +6,16 @@
   flex-direction: column;
   gap: 12px;
   z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sticky-actions.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .sticky-btn {
@@ -14,14 +24,14 @@
   border-radius: 999px;
   color: #fff;
   font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   opacity: 0.95;
 }
 
 .sticky-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.24);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
   opacity: 1;
 }
 
@@ -38,10 +48,9 @@
     right: 12px;
     bottom: 12px;
   }
+
   .sticky-btn {
     padding: 10px 14px;
     font-size: 0.95rem;
   }
 }
-
-

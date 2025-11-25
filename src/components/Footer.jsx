@@ -71,7 +71,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-gradient-to-b from-white via-[#f3f4f6] to-[#f9fafb] border-t-2 border-[#0080ff]">
+    <footer className="w-full bg-gradient-to-b from-white via-brand-light to-[#f9fafb] border-t border-brand-primary/10">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-12">
@@ -95,7 +95,7 @@ const Footer = () => {
                 />
               </picture>
             </Link>
-            <p className="text-[#6b7280] text-sm leading-relaxed font-medium">
+            <p className="text-brand-muted text-sm leading-relaxed font-medium">
               Professional debt counselling helping South Africans regain financial independence with dignity and support.
             </p>
             <div className="flex gap-4 mt-2">
@@ -106,7 +106,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-[#6b7280] hover:text-[#0080ff] transition-colors duration-300 p-2 hover:bg-[#e0eeff] rounded-lg"
+                  className="text-brand-muted hover:text-brand-primary transition-colors duration-300 p-2 hover:bg-brand-light rounded-lg"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -118,7 +118,7 @@ const Footer = () => {
           <div className="lg:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-8">
             {columns.map((col) => (
               <div key={col.title} className="flex flex-col gap-4">
-                <h4 className="text-[#0066cc] font-bold text-sm uppercase tracking-wider">
+                <h4 className="text-brand-primary font-bold text-sm uppercase tracking-wider">
                   {col.title}
                 </h4>
                 <ul className="space-y-2">
@@ -126,9 +126,9 @@ const Footer = () => {
                     <li key={label}>
                       <Link
                         to={href}
-                        className="text-[#6b7280] hover:text-[#0080ff] text-sm transition-colors duration-300 flex items-center gap-2 group"
+                        className="text-brand-muted hover:text-brand-accent text-sm transition-colors duration-300 flex items-center gap-2 group"
                       >
-                        <span className="w-1 h-1 bg-[#0080ff] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <span className="w-1 h-1 bg-brand-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                         {label}
                       </Link>
                     </li>
@@ -140,67 +140,67 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="border-t-2 border-[#e5e7eb] pt-8 mb-8">
+        <div className="border-t border-brand-muted/10 pt-8 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#e0eeff] rounded-lg flex items-center justify-center">
-                <Phone className="w-5 h-5 text-[#0080ff]" />
+              <div className="w-10 h-10 bg-brand-light rounded-lg flex items-center justify-center">
+                <Phone className="w-5 h-5 text-brand-primary" />
               </div>
               <div>
-                <p className="text-xs text-[#6b7280] font-medium">PHONE</p>
+                <p className="text-xs text-brand-muted font-medium">PHONE</p>
                 <a
                   href="tel:0215696571"
-                  className="text-[#0066cc] font-semibold hover:text-[#0080ff] transition-colors"
+                  className="text-brand-primary font-semibold hover:text-brand-accent transition-colors"
                 >
                   021 569 6571
                 </a>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#e0eeff] rounded-lg flex items-center justify-center">
-                <Mail className="w-5 h-5 text-[#0080ff]" />
+              <div className="w-10 h-10 bg-brand-light rounded-lg flex items-center justify-center">
+                <Mail className="w-5 h-5 text-brand-primary" />
               </div>
               <div>
-                <p className="text-xs text-[#6b7280] font-medium">EMAIL</p>
+                <p className="text-xs text-brand-muted font-medium">EMAIL</p>
                 <a
                   href="mailto:info@creditore.co.za"
-                  className="text-[#0066cc] font-semibold hover:text-[#0080ff] transition-colors"
+                  className="text-brand-primary font-semibold hover:text-brand-accent transition-colors"
                 >
                   info@creditore.co.za
                 </a>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#e0eeff] rounded-lg flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-[#0080ff]" />
+              <div className="w-10 h-10 bg-brand-light rounded-lg flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-brand-primary" />
               </div>
               <div>
-                <p className="text-xs text-[#6b7280] font-medium">LOCATION</p>
-                <p className="text-[#0066cc] font-semibold">Cape Town, South Africa</p>
+                <p className="text-xs text-brand-muted font-medium">LOCATION</p>
+                <p className="text-brand-primary font-semibold">Cape Town, South Africa</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-[#e5e7eb] pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#6b7280]">
+        <div className="border-t border-brand-muted/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-muted">
           <p>© {new Date().getFullYear()} Creditoré. All Rights Reserved. NCR Registered Debt Counsellor.</p>
           <div className="flex gap-6">
             <Link
               to="/privacy"
-              className="hover:text-[#0080ff] transition-colors duration-300 font-medium"
+              className="hover:text-brand-primary transition-colors duration-300 font-medium"
             >
               Privacy Policy
             </Link>
             <Link
               to="/terms"
-              className="hover:text-[#0080ff] transition-colors duration-300 font-medium"
+              className="hover:text-brand-primary transition-colors duration-300 font-medium"
             >
               Terms of Service
             </Link>
             <a
               href="https://creditore.co.za"
-              className="hover:text-[#0080ff] transition-colors duration-300 font-medium"
+              className="hover:text-brand-primary transition-colors duration-300 font-medium"
             >
               Support
             </a>

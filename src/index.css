@@ -2,8 +2,11 @@
   The following Tailwind directives require Tailwind CSS and PostCSS setup.
   If you see "Unknown at rule @tailwind", ensure your build tool is configured for Tailwind.
 */
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
 

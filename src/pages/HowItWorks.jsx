@@ -94,15 +94,44 @@ const HowItWorks = () => {
                   ref={stepRef.ref}
                 >
                   <div className="step-marker">
-                    <div className="step-number-dot"></div>
+                    <div className="step-dot"></div>
                   </div>
                   <div className="step-content glass-card">
-                    <div className="card-icon-wrapper">
-                      {step.icon}
-                      <span className="card-step-number">{step.number}</span>
+                    <div className="step-icon-floating">
+                      <div className="step-pulse-ring"></div>
+                      <div className="step-pulse-ring-2"></div>
+                      <div className="step-icon-circle">
+                        <div className="step-icon">
+                          {step.icon}
+                        </div>
+                        <div className="step-number-badge">{step.number}</div>
+                      </div>
+                      <svg className="step-progress-ring" width="90" height="90">
+                        <circle
+                          className="progress-ring-circle"
+                          stroke={`url(#gradient-${step.number})`}
+                          strokeWidth="3"
+                          fill="transparent"
+                          r="40"
+                          cx="45"
+                          cy="45"
+                          strokeDasharray={`${(step.number / 7) * 251} 251`}
+                          strokeDashoffset="0"
+                        />
+                        <defs>
+                          <linearGradient id={`gradient-${step.number}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="var(--brand-accent)" />
+                            <stop offset="100%" stopColor="var(--brand-primary)" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
                     </div>
-                    <h3>{step.title}</h3>
+                    <div className="step-header">
+                      <span className="step-label">Step {step.number} of 7</span>
+                      <h3>{step.title}</h3>
+                    </div>
                     <p>{step.description}</p>
+                    <div className="step-shine"></div>
                   </div>
                 </div>
               )

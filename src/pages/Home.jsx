@@ -6,8 +6,25 @@ import ProcessTimeline from '../components/ProcessTimeline'
 import FeatureShowcase from '../components/FeatureShowcase'
 import TrustBanner from '../components/TrustBanner'
 import { useInView } from '../hooks/useInView'
+import {
+  HiShieldCheck,
+  HiEye,
+  HiUserGroup,
+  HiAcademicCap,
+  HiClipboardCheck
+} from 'react-icons/hi'
 import './Home.css'
 import ResponsiveImage from '../components/ResponsiveImage'
+
+const Card = ({ icon, title, description }) => {
+  return (
+    <div className="value-card">
+      <div className="value-icon">{icon}</div>
+      <h3 className="value-title">{title}</h3>
+      <p className="value-description">{description}</p>
+    </div>
+  )
+}
 
 const Home = () => {
   const navigate = useNavigate()
@@ -28,8 +45,38 @@ const Home = () => {
     navigate('/contact')
   }
 
+  const coreValues = [
+    {
+      icon: <HiShieldCheck />,
+      title: 'Integrity',
+      description: 'We conduct business with honesty and ethical standards.'
+    },
+    {
+      icon: <HiEye />,
+      title: 'Transparency',
+      description: 'Clear communication and no hidden fees or surprises.'
+    },
+    {
+      icon: <HiUserGroup />,
+      title: 'Client-Centric Approach',
+      description: 'Your financial well-being is our top priority.'
+    },
+    {
+      icon: <HiAcademicCap />,
+      title: 'Professional Excellence',
+      description: 'Registered debt counsellors with proven expertise.'
+    },
+    {
+      icon: <HiClipboardCheck />,
+      title: 'Compliance & Ethical Conduct',
+      description: 'Fully compliant with NCR regulations and POPIA.'
+    }
+  ]
+
   const hero = useInView()
   const about = useInView()
+  const values = useInView()
+  const trust = useInView()
 
   return (
     <div className="home">
@@ -112,8 +159,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Feature Showcase - Replaces Core Values Cards */}
-      <FeatureShowcase />
+      {/* Core Values Section */}
+      <section className={`core-values section reveal ${values.inView ? 'reveal-in' : ''}`} ref={values.ref}>
+        <div className="container">
+          <h2 className="section-title">Our Core Values</h2>
+          <div className="values-grid">
+            {coreValues.map((value, index) => (
+              <Card key={index} icon={value.icon} title={value.title} description={value.description} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Professional Consultation Section */}
       <section className="section bg-gradient-to-b from-white to-brand-light">
@@ -157,11 +213,57 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trust Banner - Replaces Trust Cards */}
-      <TrustBanner />
+      {/* Trust & Compliance */}
+      <section className={`trust section reveal ${trust.inView ? 'reveal-in' : ''}`} aria-labelledby="trust-title" ref={trust.ref}>
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-12">
+            {/* Text Content */}
+            <div>
+              <h2 id="trust-title" className="text-3xl font-bold text-brand-primary mb-4">The Path to Financial Freedom</h2>
+              <p className="text-brand-muted mb-4 text-lg leading-relaxed font-medium">
+                Debt doesn't define you. With the right guidance and a structured plan, you can break free from
+                financial stress and build a secure future. Our debt counselling process is designed to be transparent,
+                legally compliant, and results-focused.
+              </p>
+              <p className="text-brand-muted mb-6 text-lg leading-relaxed font-medium">
+                Whether you're struggling with credit card debt, personal loans, or multiple creditors,
+                we have solutions that work. Let us help you reclaim your financial independence.
+              </p>
+              <Link to="/how-it-works" className="btn btn-primary link-underline">
+                Discover Your Options
+              </Link>
+            </div>
+            {/* Image */}
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <ResponsiveImage
+                src="/images/Pic3.jpeg"
+                alt="Financial professional discussing debt solutions"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
 
-      {/* Process Timeline Section - NEW */}
-      <ProcessTimeline />
+          <h3 className="text-2xl font-bold text-center text-brand-primary mb-8">Why South Africans Choose Creditore</h3>
+          <div className="trust-grid">
+            <div className="trust-card">
+              <h4>NCR Registration</h4>
+              <p>NCR Registered Debt Counsellor — NCRDC-XXXX (placeholder)</p>
+            </div>
+            <div className="trust-card">
+              <h4>POPIA Aligned</h4>
+              <p>Your personal information is handled with strict confidentiality and lawful purpose.</p>
+            </div>
+            <div className="trust-card">
+              <h4>Secure & Confidential</h4>
+              <p>All assessments are private. We never contact your employer or family.</p>
+            </div>
+            <div className="trust-card">
+              <h4>Results-Focused</h4>
+              <p>Custom repayment plans, reduced instalments, and creditor protection.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials Section */}
       <TestimonialsCarouselPremium />

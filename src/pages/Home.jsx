@@ -1,10 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+// CallbackForm removed in favour of centralised Contact page form
 import TestimonialsCarouselPremium from '../components/TestimonialsCarouselPremium'
-import StatsSection from '../components/StatsSection'
-import ProcessTimeline from '../components/ProcessTimeline'
-import FeatureShowcase from '../components/FeatureShowcase'
-import TrustBanner from '../components/TrustBanner'
 import { useInView } from '../hooks/useInView'
 import {
   HiShieldCheck,
@@ -84,7 +81,6 @@ const Home = () => {
       {/* Hero Section */}
       <section className={`hero reveal ${hero.inView ? 'reveal-in' : ''}`} ref={hero.ref}>
         <div className="hero-overlay"></div>
-
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">Find Your Path to Financial Freedom.</h1>
@@ -124,9 +120,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      {/* Statistics Section - NEW */}
-      <StatsSection />
 
       {/* Callback form removed — use Contact page instead */}
 
